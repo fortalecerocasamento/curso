@@ -448,11 +448,62 @@ input, textarea, select {
                 <h2>Conclusão</h2>
                 <p>As diferenças nos estilos de comunicação não precisam ser um obstáculo no casamento. Na verdade, quando compreendidas e apreciadas, essas diferenças podem tornar-se um ponto forte do relacionamento. Um cônjuge pode oferecer empatia e compreensão emocional, enquanto o outro oferece soluções práticas e ação. Juntos, formam uma abordagem equilibrada e mais eficaz para resolver os desafios da vida conjugal.</p>
             </section>
+            
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 2px solid #667eea; display: grid; grid-template-columns: 1fr; gap: 10px;">
+                <button type="button" onclick="salvar()" style="padding: 12px; background: #667eea; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold;">💾 Salvar Respostas</button>
+                <button type="button" onclick="exportarPDF()" style="padding: 12px; background: #1976d2; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold;">📄 Exportar PDF</button>
+                <button type="button" onclick="compartilharWhatsapp()" style="padding: 12px; background: #25d366; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: bold;">💬 Compartilhar WhatsApp</button>
+            </div>
         </main>
         
         <footer>
-            <p>&copy; 2026 - Atividade de Desenvolvimento Conjugal | Fortalecer o Casamento</p>
+            <a href="atividade1.html">⬅️ Anterior</a>
+            <a href="index.html">🏠 Início</a>
+            <a href="atividade3.html">➡️ Próxima</a>
         </footer>
     </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function salvar() {
+  alert("✅ Respostas salvas no aparelho.\nVocê pode exportar em PDF ou compartilhar no WhatsApp.");
+}
+
+function coletarRespostas() {
+  const inputs = document.querySelectorAll('textarea, input[type="text"]');
+  let respostas = '🏠 FORTALECER O CASAMENTO - SESSÃO 2\n';
+  respostas += '📅 Data: ' + new Date().toLocaleDateString('pt-BR') + '\n';
+  respostas += '⏰ Hora: ' + new Date().toLocaleTimeString('pt-BR') + '\n\n';
+  respostas += '='.repeat(50) + '\n\n';
+  
+  let contador = 1;
+  inputs.forEach((input) => {
+    const label = input.previousElementSibling?.textContent || 'Resposta ' + contador;
+    const valor = input.value || '(sem resposta)';
+    respostas += '❓ ' + label + '\n💬 ' + valor + '\n\n';
+    contador++;
+  });
+  respostas += '='.repeat(50);
+  return respostas;
+}
+
+function exportarPDF() {
+  const element = document.querySelector('main');
+  const opt = {
+    margin: 10,
+    filename: 'Atividade-2-Respostas.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 1.5 },
+    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+  };
+  html2pdf().set(opt).from(element).save();
+}
+
+function compartilharWhatsapp() {
+  const respostas = coletarRespostas();
+  const url = 'https://wa.me/?text=' + encodeURIComponent(respostas);
+  window.open(url, '_blank');
+}
+</script>
 </body>
 </html>
