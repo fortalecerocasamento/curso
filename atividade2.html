@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Atividade 2 - Compreender Diferentes Estilos de Comunicação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        main {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+        }
+        
+        .style-box {
+            background: #f8f9ff;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .style-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .style-box ul {
+            margin-left: 20px;
+        }
+        
+        .style-box li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .conversation-example {
+            background: #f0f4ff;
+            border: 2px dashed #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .conversation-example h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .dialogue {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .dialogue strong {
+            color: #764ba2;
+        }
+        
+        .steps {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .steps h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .steps ol {
+            margin-left: 25px;
+        }
+        
+        .steps li {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .step-number {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .reflection-box {
+            background: #fff5e6;
+            border: 2px solid #ffa500;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .reflection-box h4 {
+            color: #ff8c00;
+            margin-bottom: 10px;
+        }
+        
+        .reflection-box ul {
+            margin-left: 20px;
+        }
+        
+        .reflection-box li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .note-box {
+            background: #ffe6e6;
+            border-left: 5px solid #d32f2f;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .note-box strong {
+            color: #d32f2f;
+}
+
+.container {
+  width: 100%;
+  max-width: 100vw;
+  background: white;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  -webkit-overflow-scrolling: touch;
+}
+
+footer {
+  background: #f5f5f5;
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  flex: 1;
+  min-width: 70px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+footer a:active {
+  background: #667eea;
+  color: white;
+}
+
+input, textarea, select {
+  font-size: 16px !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  h1, h2 {
+    font-size: 18px;
+  }
+  .section {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 22px;
+            }
+            
+            .section h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Atividade 2: Compreender Diferentes Estilos de Comunicação</h1>
+            <p>Segunda Sessão - Comunicar-se com Amor</p>
+        </header>
+        
+        <main>
+            <!-- Objetivo da Atividade -->
+            <section class="section">
+                <h2>Objetivo da Atividade</h2>
+                <p>Ajudar os casais a desenvolver uma compreensão melhor dos diferentes estilos de comunicação e reconhecer como essas diferenças podem ser complementares no relacionamento conjugal, em vez de serem um obstáculo.</p>
+            </section>
+            
+            <!-- Contexto -->
+            <section class="section">
+                <h2>Compreender os Estilos de Comunicação</h2>
+                <p>Como mencionado na sessão, existem duas abordagens principais de comunicação que as pessoas utilizam:</p>
+                
+                <div class="style-box">
+                    <h3>Estilo Baseado em Sentimentos (Consenso e Escuta)</h3>
+                    <ul>
+                        <li>Tendência a resolver problemas buscando um consenso</li>
+                        <li>Ênfase na escuta ativa e empatia</li>
+                        <li>Fazer perguntas para compreender melhor</li>
+                        <li>Expressão aberta de sentimentos</li>
+                        <li>Compartilhamento de problemas pessoais</li>
+                    </ul>
+                </div>
+                
+                <div class="style-box">
+                    <h3>Estilo Voltado para Soluções (Ação e Prática)</h3>
+                    <ul>
+                        <li>Foco em resolver o problema rapidamente</li>
+                        <li>Oferecer conselhos e orientações práticas</li>
+                        <li>Tranquilizar e buscar soluções imediatas</li>
+                        <li>Ênfase na ação e na eficiência</li>
+                        <li>Preferência por fatos e dados concretos</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Exercício Prático -->
+            <section class="section">
+                <h2>Exercício Prático</h2>
+                
+                <div class="steps">
+                    <h3>Passo a Passo do Exercício</h3>
+                    <ol>
+                        <li>
+                            <strong>Primeira Conversa (2 a 3 minutos) - Estilo de Sentimentos:</strong><br>
+                            O casal deve ter uma conversa abordando um problema neutro real ou imaginário APENAS baseado em sentimentos. Isso significa:
+                            <ul style="margin: 10px 0 0 20px;">
+                                <li>Buscar consenso</li>
+                                <li>Praticar escuta ativa</li>
+                                <li>Fazer perguntas genuínas</li>
+                                <li>Expressar sentimentos abertamente</li>
+                                <li>Revelar problemas pessoais relacionados</li>
+                            </ul>
+                        </li>
+                        
+                        <li style="margin-top: 20px;">
+                            <strong>Segunda Conversa (2 a 3 minutos) - Estilo de Soluções:</strong><br>
+                            Usando o MESMO problema, conversem agora com ênfase em encontrar soluções. Isso envolve:
+                            <ul style="margin: 10px 0 0 20px;">
+                                <li>Dar conselhos práticos</li>
+                                <li>Tranquilizar e oferecer segurança</li>
+                                <li>Achar soluções concretas</li>
+                                <li>Pensar em ações práticas</li>
+                            </ul>
+                        </li>
+                        
+                        <li style="margin-top: 20px;">
+                            <strong>Reflexão com o Cônjuge:</strong><br>
+                            Após completar ambas as conversas:
+                            <ul style="margin: 10px 0 0 20px;">
+                                <li>Discutir se houve dificuldade em adotar um dos estilos</li>
+                                <li>Identificar qual é mais natural para cada um</li>
+                                <li>Observar como o outro se sentiu em cada abordagem</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="note-box">
+                    <strong>⚠️ Importante:</strong> Escolha um problema NEUTRO ou fictício para este exercício. Não use questões que desencadeiem conflitos reais entre vocês nesta fase do aprendizado.
+                </div>
+            </section>
+            
+            <!-- Exemplo do Exercício -->
+            <section class="section">
+                <h2>Exemplo de Problema para Praticar</h2>
+                
+                <div class="conversation-example">
+                    <h4>Situação Fictícia: Preparação de uma Refeição</h4>
+                    <p style="margin-bottom: 15px;">Um casal está planejando preparar o jantar. Um deles tem preferência por uma receita específica, enquanto o outro prefere algo diferente.</p>
+                    
+                    <h4 style="margin-top: 20px; color: #764ba2;">Conversa com Foco em Sentimentos (2-3 minutos):</h4>
+                    <div class="dialogue">
+                        <strong>Cônjuge 1:</strong> "Gostaria de conversar sobre o jantar de hoje. Como você se sente em relação ao que vamos preparar?"
+                    </div>
+                    <div class="dialogue">
+                        <strong>Cônjuge 2:</strong> "Bem, eu pensava em algo diferente. Como se sente com essa sugestão?"
+                    </div>
+                    <div class="dialogue">
+                        <strong>Cônjuge 1:</strong> "Entendo. Me sinto um pouco decepcionado porque eu estava pensando naquela receita que minha mãe fazia. Isso significaria muito para mim. Qual é sua preferência e por quê?"
+                    </div>
+                    <div class="dialogue">
+                        <strong>Cônjuge 2:</strong> "Ah, entendo. Para mim, é importante porque acho que seria mais rápido e menos estressante. Como ambos tivemos um dia cansativo..."
+                    </div>
+                    
+                    <h4 style="margin-top: 20px; color: #764ba2;">Conversa com Foco em Soluções (2-3 minutos):</h4>
+                    <div class="dialogue">
+                        <strong>Cônjuge 1:</strong> "Precisamos decidir o que preparar para o jantar. Eu sugiro a receita que e rápida de fazer. Que tal?"
+                    </div>
+                    <div class="dialogue">
+                        <strong>Cônjuge 2:</strong> "Na verdade, eu pensava em fazer algo diferente, mas entendo que você quer algo prático."
+                    </div>
+                    <div class="dialogue">
+                        <strong>Cônjuge 1:</strong> "Vou dar uma sugestão: por que não cozinhamos juntos? Assim, fica mais rápido e podemos fazer algo que ambos gostamos. Podemos dividir as tarefas."
+                    </div>
+                    <div class="dialogue">
+                        <strong>Cônjuge 2:</strong> "Ótima ideia! Isso funciona perfeitamente. Quando começamos?"
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Reflexão Pessoal -->
+            <section class="section">
+                <h2>Reflexão Pessoal</h2>
+                
+                <div class="reflection-box">
+                    <h4>Perguntas para Reflexão Individual:</h4>
+                    <ul>
+                        <li>Qual estilo de comunicação é mais natural para você?</li>
+                        <li>Qual estilo foi mais desafiador de praticar?</li>
+                        <li>Como você se sentiu em cada tipo de conversa?</li>
+                        <li>Qual estilo seu cônjuge parece usar naturalmente?</li>
+                        <li>Como as diferenças nos estilos afetam suas conversas diárias?</li>
+                    </ul>
+                </div>
+                
+                <div class="steps">
+                    <h3>Exercício Escrito</h3>
+                    <p style="margin-bottom: 15px;">Cada cônjuge deve descrever por escrito:</p>
+                    <ol>
+                        <li>Seu próprio estilo de comunicação (como você naturalmente se comunica)</li>
+                        <li>O estilo de comunicação de seu cônjuge (como você observa que ele/a naturalmente se comunica)</li>
+                        <li>Como reconhecer e apreciar as diferenças</li>
+                    </ol>
+                    <p style="margin-top: 15px;">Após escrever, mostrem um ao outro suas observações. Conversem para verificar se estão de acordo com as descrições.</p>
+                </div>
+            </section>
+            
+            <!-- Discussão em Casal -->
+            <section class="section">
+                <h2>Discussão em Casal</h2>
+                
+                <div class="note-box">
+                    <strong>✓ Tópicos para Discutir:</strong>
+                    <ul style="margin: 10px 0 0 20px; list-style: none;">
+                        <li style="margin-bottom: 10px;">• Como cada um se sentiu durante as duas conversas?</li>
+                        <li style="margin-bottom: 10px;">• Qual estilo você prefere usar e por quê?</li>
+                        <li style="margin-bottom: 10px;">• Como podem apreciar o estilo diferente do cônjuge?</li>
+                        <li style="margin-bottom: 10px;">• Quando é apropriado usar cada estilo?</li>
+                        <li style="margin-bottom: 10px;">• Como podem combinar ambos os estilos em suas conversas?</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Conclusão -->
+            <section class="section">
+                <h2>Conclusão</h2>
+                <p>As diferenças nos estilos de comunicação não precisam ser um obstáculo no casamento. Na verdade, quando compreendidas e apreciadas, essas diferenças podem tornar-se um ponto forte do relacionamento. Um cônjuge pode oferecer empatia e compreensão emocional, enquanto o outro oferece soluções práticas e ação. Juntos, formam uma abordagem equilibrada e mais eficaz para resolver os desafios da vida conjugal.</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 - Atividade de Desenvolvimento Conjugal | Fortalecer o Casamento</p>
+        </footer>
+    </div>
+</body>
+</html>
