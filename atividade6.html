@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6 - Enriquecer o Casamento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #d4af37 0%, #c4a030 100%);
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+}
+
+.container {
+            width: 100%;
+            max-width: 100vw;
+            background: white;
+            border-radius: 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+        }
+        
+        main {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        input, textarea {
+            font-size: 16px !important;
+        }
+        
+        @media (max-width: 600px) {
+            main {
+                padding: 12px;
+            }
+            
+            header h1 {
+                font-size: 22px;
+            }
+            
+            .section h2 {
+                font-size: 18px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        header {
+            background: linear-gradient(135deg, #d4af37 0%, #c4a030 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        main {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #d4af37;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #b8860b;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+        }
+        
+        .quote-box {
+            background: #fffacd;
+            border-left: 5px solid #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 10px;
+        }
+        
+        .activity-card {
+            background: linear-gradient(135deg, #fffacd 0%, #ffebcd 100%);
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .activity-card h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        
+        .form-section {
+            background: #f5f5f0;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            min-height: 100px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+        
+        .checklist {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 8px;
+            background: #fafaf5;
+            border-radius: 4px;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 3px;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .checklist-item label {
+            margin: 0;
+            font-weight: normal;
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .card h4 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        
+        .card p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .card ul {
+            margin: 10px 0 0 20px;
+        }
+        
+        .card li {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .success-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .success-box h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .success-box p {
+            color: #555;
+        }
+        
+        .example-box {
+            background: #f0f8ff;
+            border: 2px dashed #4169e1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .example-box h4 {
+            color: #4169e1;
+            margin-bottom: 10px;
+        }
+        
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .reflection-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .reflection-box h4 {
+            color: #e65100;
+            margin-bottom: 15px;
+        }
+        
+        .reflection-box ul {
+            margin-left: 25px;
+        }
+        
+        .reflection-box li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .priority-list {
+            background: white;
+            border: 2px solid #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .priority-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 15px;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #fafaf5;
+            border-radius: 5px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .priority-item input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .table-responsive table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .table-responsive th {
+            background: linear-gradient(135deg, #d4af37 0%, #c4a030 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .table-responsive td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .table-responsive tr:hover {
+            background: #fffacd;
+        }
+        
+        .tip-box {
+            background: #e0ffe0;
+            border: 2px solid #76b82a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .tip-box h4 {
+            color: #2d5a0d;
+            margin-bottom: 10px;
+        }
+        
+        .tip-box p {
+            color: #555;
+        }
+        
+        footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 22px;
+            }
+            
+            .section h2 {
+                font-size: 18px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Atividade 6: Enriquecer o Casamento</h1>
+            <p>Sexta Sessão - Fortalecer o Casamento</p>
+        </header>
+        
+        <main>
+            <!-- Objetivo -->
+            <section class="section">
+                <h2>Objetivo da Atividade</h2>
+                <p>Ajudar os casais a compreender que o enriquecimento constante é essencial para um casamento saudável, aprender princípios e atividades práticas para fortalecer o relacionamento, e desenvolver um plano pessoal para enriquecer o casamento.</p>
+                
+                <div class="quote-box">
+                    "Para enriquecer o casamento, o mais importante são as pequenas coisas. (…) O casamento é uma busca conjunta do que é bom, belo e divino."
+                    <div class="quote-author">— Presidente James E. Faust</div>
+                </div>
+            </section>
+            
+            <!-- Introdução -->
+            <section class="section">
+                <h2>Por Que Enriquecer o Casamento?</h2>
+                
+                <p>Durante o namoro, os casais dedicam muito tempo um ao outro, demonstram bondade, respeitam-se, são generosos, conversam e compartilham metas e valores. Porém, após o casamento, muitas responsabilidades competem pela atenção: trabalho, filhos, Igreja, comunidade.</p>
+                
+                <p>Com o tempo, alguns cônjuges interagem cada vez menos um com o outro. O casamento deixa de ser prioridade, o relacionamento enfraquece, os atos de bondade diminuem, e o romance desaparece. Segundo o Presidente Faust, essa "falta de enriquecimento constante" é uma das principais causas do divórcio.</p>
+                
+                <div class="success-box">
+                    <h4>✓ Inversão Pequena, Recompensa Grande</h4>
+                    <p>O investimento de tempo e energias pequenas no casamento traz benefícios imensos: maior felicidade, paz de espírito, melhor saúde física e emocional, maior intimidade, confiança e amor genuíno. O Presidente Faust afirmou: "A felicidade no casamento e na paternidade e maternidade ultrapassa mil vezes qualquer outra felicidade".</p>
+                </div>
+            </section>
+            
+            <!-- Atividade 1: Benefícios do Enriquecimento -->
+            <section class="section">
+                <h2>Atividade 1: Reconhecer os Benefícios</h2>
+                
+                <div class="activity-card">
+                    <h3>Refletir Sobre Por Que Investir no Casamento Importa</h3>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Quais benefícios você espera ao investir mais energia em seu casamento?</strong></label>
+                        <textarea placeholder="Maior felicidade, melhor comunicação, mais intimidade, confiança renovada, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Qual é o estado atual de seu casamento (hones­tamente)?</strong></label>
+                        <textarea placeholder="Forte? Enfraquecido? Distante? Precisando de atenção?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como você se sentiria se seu casamento fosse mais rico e significativo?</strong></label>
+                        <textarea placeholder="Describe a transformação que deseja..."></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 2: Pequenas Coisas -->
+            <section class="section">
+                <h2>Atividade 2: Ideias de Pequenas Coisas Para Enriquecer</h2>
+                
+                <div class="activity-card">
+                    <h3>Gerar Ideias Criativas</h3>
+                    <p>O presidente Faust ensinou que "as pequenas coisas" são o mais importante. Aqui estão sugestões práticas:</p>
+                </div>
+                
+                <div class="two-column">
+                    <div class="card">
+                        <h4>💬 Comunicação e Conexão</h4>
+                        <ul>
+                            <li>Conversar regularmente over sentimentos</li>
+                            <li>Perguntar sobre o dia do cônjuge</li>
+                            <li>Compartilhar metas e sonhos</li>
+                            <li>Enviar mensagens carinhosas</li>
+                            <li>Fazer ligações during the day</li>
+                            <li>Escrever bilhetes amorosos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>💝 Atos de Bondade</h4>
+                        <ul>
+                            <li>Elogios genuínos diários</li>
+                            <li>Demonstrações de gratidão</li>
+                            <li>Ajudar em tarefas domésticas</li>
+                            <li>Trazer café/chá favorito</li>
+                            <li>Abraços e carinhos</li>
+                            <li>Ouvir atentamente sem interrupções</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>🎉 Diversão e Lazer</h4>
+                        <ul>
+                            <li>Dançar juntos</li>
+                            <li>Caminhar ou exercitar-se juntos</li>
+                            <li>Assistir a um filme</li>
+                            <li>Ir a um restaurante</li>
+                            <li>Jogar jogos juntos</li>
+                            <li>Participar de hobbies um do outro</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>🙏 Espiritualidade Compartilhada</h4>
+                        <ul>
+                            <li>Orar juntos</li>
+                            <li>Estudar escrituras juntos</li>
+                            <li>Ir ao templo regularmente</li>
+                            <li>Participar da Igreja juntos</li>
+                            <li>Discutir valores e fé</li>
+                            <li>Servir a comunidade juntos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Minhas ideias para enriquecer o casamento:</strong></label>
+                        <textarea placeholder="Liste pelo menos 10 coisas pequenas que você e seu cônjuge poderiam fazer..."></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 3: Centrar no Evangelho -->
+            <section class="section">
+                <h2>Atividade 3: Buscar Unidade Espiritual</h2>
+                
+                <div class="activity-card">
+                    <h3>O Fundamento: Presença Divina</h3>
+                    <p>O Presidente Faust ensinou: "Há um ingrediente especial para enriquecer o casamento... Trata-se da presença divina no casamento."</p>
+                </div>
+                
+                <div class="reflection-box">
+                    <h4>Práticas Espirituais para Casamentos Fortes</h4>
+                    <ul>
+                        <li><strong>Orar juntos</strong> (manhã e noite)</li>
+                        <li><strong>Estudar as escrituras</strong> diariamente</li>
+                        <li><strong>Realizar a noite familiar</strong> semanalmente</li>
+                        <li><strong>Frequentar o templo</strong> regularmente</li>
+                        <li><strong>Participar das reuniões da Igreja</strong> juntos</li>
+                        <li><strong>Servir aos outros</strong> em espírito de caridade</li>
+                        <li><strong>Guardar os convênios</strong> fielmente</li>
+                    </ul>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Avaliação Honesta: Como Está Nossa Vida Espiritual Conjunta?</strong></label>
+                        <textarea placeholder="Oramos juntos? Estudamos as escrituras? Realizamos a noite familiar?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Qual é a importância disso para você?</strong></label>
+                        <textarea placeholder="Como a espiritualidade compartilhada afeta seu casamento?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Que mudanças spirituais vocês gostaria de fazer como casal?</strong></label>
+                        <textarea placeholder="Metas espirituais que você quer atingir juntos..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Quem será responsável por iniciar essas mudanças?</strong></label>
+                        <input type="text" placeholder="Ex: Ambos, o marido, a esposa...">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 4: Estabelecer Prioridades -->
+            <section class="section">
+                <h2>Atividade 4: Estabelecer Prioridades</h2>
+                
+                <div class="activity-card">
+                    <h3>Alinhar Prioridades como Casal</h3>
+                    <p>Muitos casamentos sofrem porque os cônjuges têm prioridades conflitantes. Este exercício ajuda a alinhar suas visões.</p>
+                </div>
+                
+                <h3>Classificar as Sete Prioridades</h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">Classifique cada item de 1 (mais importante) a 7 (menos importante) na coluna "MINHA Classificação". Depois, estime como classificaria o cônjuge (coluna "CLASSIFICAÇÃO do Cônjuge").</p>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Prioridade</th>
+                                <th style="width: 150px;">Minha Classificação (1-7)</th>
+                                <th style="width: 150px;">Classificação do Cônjuge (1-7)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Atingir metas profissionais</td>
+                                <td><input type="number" min="1" max="7"></td>
+                                <td><input type="number" min="1" max="7"></td>
+                            </tr>
+                            <tr>
+                                <td>Magnificar um chamado da Igreja</td>
+                                <td><input type="number" min="1" max="7"></td>
+                                <td><input type="number" min="1" max="7"></td>
+                            </tr>
+                            <tr>
+                                <td>Prestar serviço comunitário</td>
+                                <td><input type="number" min="1" max="7"></td>
+                                <td><input type="number" min="1" max="7"></td>
+                            </tr>
+                            <tr>
+                                <td>Aumentar amor pelo Pai Celestial e Jesus Cristo</td>
+                                <td><input type="number" min="1" max="7"></td>
+                                <td><input type="number" min="1" max="7"></td>
+                            </tr>
+                            <tr>
+                                <td>Alcançar sucesso no casamento <em>(Fortalecer o relacionamento conjugal)</em></td>
+                                <td><input type="number" min="1" max="7"></td>
+                                <td><input type="number" min="1" max="7"></td>
+                            </tr>
+                            <tr>
+                                <td>Ter bom relacionamento com os filhos</td>
+                                <td><input type="number" min="1" max="7"></td>
+                                <td><input type="number" min="1" max="7"></td>
+                            </tr>
+                            <tr>
+                                <td>Desenvolver os talentos</td>
+                                <td><input type="number" min="1" max="7"></td>
+                                <td><input type="number" min="1" max="7"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Depois de comparar com seu cônjuge - Há grandes diferenças? Em que áreas?</strong></label>
+                        <textarea placeholder="Identifique exatamente onde vocês discordam..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Essas diferenças revelam problemas no relacionamento?</strong></label>
+                        <textarea placeholder="Sim ou não? Explique por quê..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como você quer que o casamento seja priorizado??</strong></label>
+                        <textarea placeholder="Qual posição gostaria que ele tivesse? Por quê?"></textarea>
+                    </div>
+                </div>
+                
+                <h3>Planejar Mais Tempo Juntos</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Ideias para inserir tempo de casal na agenda:</strong></label>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Incluir na reunião de conselho familiar semanal</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Reduzir atividades menos importantes</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Reservar momento para conversar ao fim do dia</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Agendar "noite de namoro" semanalmente</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Caminhar juntos regularmente</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Tirar férias em família</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Meu plano específico para compartilhar mais tempo com meu cônjuge:</strong></label>
+                        <textarea placeholder="Que mudanças concretas você fará? Quando? Com que frequência?"></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 5: Diversão Juntos -->
+            <section class="section">
+                <h2>Atividade 5: Planejar Atividades para Fazer Juntos</h2>
+                
+                <div class="activity-card">
+                    <h3>A Diversão é Essencial para um Casamento Feliz</h3>
+                    <p>Pesquisas mostram que casais que riem e se divertem juntos tendem a estar muito mais satisfeitos com seu casamento.</p>
+                </div>
+                
+                <div class="tip-box">
+                    <h4>💡 Dica: Não Discutir Problemas Durante Atividades de Lazer</h4>
+                    <p>Esses momentos devem ser APENAS para desfrutar um do outro, rir e se conectar. Salve discussões importantes para outro momento.</p>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Atividades salutares que ambos gostamos de fazer:</strong></label>
+                        <textarea placeholder="Dançar, caminhar, assistir filmes, cozinhar juntos, esportes, viagens, etc. Lista o mais completa possível..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Atividades que EU gosto e gostaria de compartilhar com meu cônjuge:</strong></label>
+                        <textarea placeholder="Seus interesses e hobbies..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Atividades que MEU CÔNJUGE gosta que eu ainda não experimentei:</strong></label>
+                        <textarea placeholder="Seus interesses para explorar juntos..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Escolha 1-2 atividades para fazer cada semana no próximo mês:</strong></label>
+                        <textarea placeholder="Semana 1:\nSemana 2:\nSemana 3:\nSemana 4:"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Planejamento de Eventos Especiais:</strong></label>
+                        <p style="margin: 10px 0; font-size: 14px; color: #666;">Você gostaria de comemorar um aniversário de casamento especial? Uma "segunda lua-de-mel"? Uma viagem romântica?</p>
+                        <textarea placeholder="Ideias para celebrar marcos especiais..."></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 6: Comunicação Positiva -->
+            <section class="section">
+                <h2>Atividade 6: Melhorar a Comunicação Diária</h2>
+                
+                <div class="activity-card">
+                    <h3>Conversar de Modo Frequente e Positivo</h3>
+                    <p>O Élder Nelson ensinou: "Reservar tempo para dialogar é essencial para manter intactas as linhas de comunicação. Como o casamento desempenha um papel primordial, merece o horário nobre!"</p>
+                </div>
+                
+                <h3>Exercício Prático de Duas Semanas</h3>
+                <div class="example-box">
+                    <h4>📋 Como Fazer:</h4>
+                    <p><strong>Conversar diariamente por:</strong> 5 minutos nos dias úteis e 15 minutos ao menos 2 vezes por semana</p>
+                    <p><strong>ASSUNTOS PARA DISCUTIR:</strong></p>
+                    <ul style="margin: 10px 0 0 25px;">
+                        <li>1) O que foi satisfatório em seu relacionamento HOJE?</li>
+                        <li>2) O que vocês mais gostaram um do outro HOJE?</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>IMPORTANTE:</strong> Sem comentários negativos, sem resolver problemas, apenas positivo!</p>
+                    <p><strong>INCLUSÃO:</strong> Cada dia, inclua pelo menos UM elogio genuíno sobre as qualidades do outro.</p>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Minha Avaliação Honesta da Comunicação Atual:</strong></label>
+                        <textarea placeholder="Como a comunicação é entre vocês agora? Positiva? Superficial? Raramente? Qual é o nível de compreensão?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Áreas Onde Minha Comunicação Melhorou Desde a Sessão 2:</strong></label>
+                        <textarea placeholder="Identifique progresso..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Compromisso com o Exercício de 2 Semanas:</strong></label>
+                        <textarea placeholder="Vocês fazem o exercício? Começando quando? Com qual frequência farão o check-in?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Depois do Exercício - O Que Vocês Aprenderam um do Outro?</strong></label>
+                        <textarea placeholder="Preenchimento após 2 semanas..."></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 7: Lista de Atos de Bondade -->
+            <section class="section">
+                <h2>Atividade 7: Elaborar uma Lista de "Atos de Bondade"</h2>
+                
+                <div class="activity-card">
+                    <h3>Demonstrar Interesse e Afeto Através de Ações</h3>
+                    <p>Esta poderosa atividade ajuda ambos os cônjuges a se sentirem valorizados e amados.</p>
+                </div>
+                
+                <h3>Passo 1: Criar a Lista</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>10 ou Mais Coisas que Gostaria que Meu Cônjuge Fizesse com Mais Frequência:</strong></label>
+                        <p style="margin: 10px 0; font-size: 13px; color: #666;"><em>Seja ESPECÍFICO ("Perguntar como foi meu dia") não genérico ("Interessar-se mais"). Devem ser simples, baratos e não relacionados a grandes conflitos.</em></p>
+                        <textarea placeholder="1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10."></textarea>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <h4>💡 Exemplos de Atos de Bondade:</h4>
+                    <ul style="margin: 10px 0 0 25px;">
+                        <li>Elogios sinceros</li>
+                        <li>Bilhetes/cartões carinhosos</li>
+                        <li>Lavar roupa ou cuidar de tarefas domésticas</li>
+                        <li>Andar de mãos dadas</li>
+                        <li>Afagar-se no sofá</li>
+                        <li>Mostrar gratidão e reconhecimento</li>
+                        <li>Telefonar durante o dia</li>
+                        <li>Cuidar das crianças para dar tempo ao outro</li>
+                        <li>Escutar sem oferecer soluções</li>
+                        <li>Trazer o café/chá favorito</li>
+                    </ul>
+                </div>
+                
+                <h3>Passo 2: Praticar por Uma Semana</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Durante a semana seguinte:</strong></label>
+                        <p style="margin: 10px 0; color: #666;">Faça PELO MENOS 3 coisas da lista de seu cônjuge cada dia, mesmo que ele/ela se esqueça de fazer o mesmo em relação a você. Não fique frustrado!</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Ao fazer esses atos, observe:</strong></label>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Como me sinto quando faço as coisas por meu cônjuge?</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Como meu cônjuge reage aos meus atos?</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Reconheço e agradeço os atos de ternura do meu cônjuge?</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox">
+                                <label>Sinto que nosso relacionamento está se fortalecendo?</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Reflexão Após a Semana de Prática:</strong></label>
+                        <textarea placeholder="Como foi? Que mudanças vocês observaram? Como se sentiram?"></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 8: Plano de Enriquecimento -->
+            <section class="section">
+                <h2>Atividade 8: Meu Plano Pessoal para Enriquecer o Casamento</h2>
+                
+                <div class="activity-card">
+                    <h3>Consolidar Tudo Em Um Plano de Ação</h3>
+                    <p>Integre tudo que aprendeu em um plano concreto para transformar seu casamento.</p>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Prioridades Espirituais (Próximas 4 Semanas):</strong></label>
+                        <textarea placeholder="Ex: Orar juntos cada manhã, estudar escrituras 3 dias/semana, realizar noite familiar..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Tempo Reservado para Estar Juntos:</strong></label>
+                        <textarea placeholder="Ex: Noite de namoro 1x/semana, momento de conversa 15 minutos/dia, caminhada 2x/semana..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Atividades de Diversão Planejadas (Próximass 4 Semanas):</strong></label>
+                        <textarea placeholder="Semana 1:\nSemana 2:\nSemana 3:\nSemana 4:"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Atos de Bondade que Vou Praticar Regularmente:</strong></label>
+                        <textarea placeholder="3 atos específicos que vou fazer..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Padrões de Comunicação Positiva que Vou Desenvolver:</strong></label>
+                        <textarea placeholder="Ex: Elogiar diariamente, perguntar sobre o dia, expressar gratidão..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Meu Compromisso Pessoal com Esse Plano:</strong></label>
+                        <textarea placeholder="Escreva uma promessa sincera a você mesmo e ao seu cônjuge sobre como vai agir..."></textarea>
+                    </div>
+                </div>
+                
+                <h3>Reavaliação E Revisão</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Vou fazer uma reavaliação de meu progresso em:</strong></label>
+                        <input type="text" placeholder="Data (1 mês, 6 meses, 1 ano)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como vou registrar o progresso?</strong></label>
+                        <textarea placeholder="Diário, notas, conversa mensal com cônjuge, etc."></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Conclusão -->
+            <section class="section">
+                <h2>Conclusão: A Beleza do Casamento Enriquecido</h2>
+                
+                <div class="quote-box">
+                    "O casamento torna-se belo quando se procura e cultiva a beleza. Posso mostrar-lhes centenas de milhares de famílias que fazem seu casamento funcionar por meio do amor, paz, disciplina, honestidade, carinho e altruísmo."
+                    <div class="quote-author">— Presidente Gordon B. Hinckley</div>
+                </div>
+                
+                <p>O relacionamento conjugal florescerá quando você demonstrar amor, gratidão, interesse e bondade. Os atos de ternura e consideração são nutrientes essenciais. Quando os cônjuges se empenham para aplicar os princípios do evangelho, reservam tempo um para o outro, diversificam-se juntos, comunicam-se com empatia e praticam atos de bondade genuína, experimentam uma transformação extraordinária.</p>
+                
+                <div class="success-box">
+                    <h4>✨ Sua Jornada Começa</h4>
+                    <p>Hoje é o dia para começar. Pequenos passos levam a transformações grandes. Ao aplicar esses princípios com consistência e amor genuíno, você verá seu casamento florescer, sua intimidade aumentar, e descobrirá um relacionamento verdadeiramente rico e significativo — uma busca conjunta do que é bom, belo e divino.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <a href="atividade5.html">⬅️ Anterior</a>
+            <a href="index.html">🏠 Início</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Atividade 3 - Promover a Igualdade e a União</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        main {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+        }
+        
+        .quote-box {
+            background: #f0f4ff;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 10px;
+        }
+        
+        .activity-card {
+            background: linear-gradient(135deg, #f5f7ff 0%, #f0f4ff 100%);
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .activity-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .steps {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #764ba2;
+            border-radius: 5px;
+        }
+        
+        .steps ol {
+            margin-left: 25px;
+        }
+        
+        .steps li {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .inventory {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        
+        .inventory table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        .inventory th, .inventory td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .inventory th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .inventory tr:hover {
+            background: #f5f7ff;
+        }
+        
+        .inventory .scale {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+        
+        .inventory .scale input[type="radio"] {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .decision-list {
+            background: white;
+            border: 2px dashed #667eea;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .decision-list h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .decision-list ul {
+            margin-left: 25px;
+        }
+        
+        .decision-list li {
+            margin-bottom: 12px;
+            color: #555;
+            padding: 8px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .key-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .principle {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .principle h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .principle p {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .warning-box {
+            background: #fff5e6;
+            border: 2px solid #ff9800;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .warning-box h4 {
+            color: #ff5722;
+            margin-bottom: 10px;
+        }
+        
+        .warning-box p {
+            color: #555;
+        }
+        
+        .success-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .success-box h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .success-box p {
+            color: #555;
+        }
+        
+        .reflection-questions {
+            background: #f3e5f5;
+            border-left: 5px solid #764ba2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .reflection-questions h4 {
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        
+        .reflection-questions ul {
+            margin-left: 25px;
+        }
+        
+        .reflection-questions li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .action-plan {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
+            border: 2px solid #fbc02d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .action-plan h4 {
+            color: #f57f17;
+            margin-bottom: 15px;
+        }
+        
+        .action-plan textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #fbc02d;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+.container {
+  width: 100%;
+  max-width: 100vw;
+  background: white;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  -webkit-overflow-scrolling: touch;
+}
+
+footer {
+  background: #f5f5f5;
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  flex: 1;
+  min-width: 70px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+footer a:active {
+  background: #667eea;
+  color: white;
+}
+
+input, textarea, select {
+  font-size: 16px !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  h1, h2 {
+    font-size: 18px;
+  }
+  .section {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 22px;
+            }
+            
+            .section h2 {
+                font-size: 18px;
+            }
+            
+            .key-principles {
+                grid-template-columns: 1fr;
+            }
+            
+            .inventory table {
+                font-size: 12px;
+            }
+            
+            .inventory th, .inventory td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Atividade 3: Promover a Igualdade e a União</h1>
+            <p>Terceira Sessão - Fortalecer o Casamento</p>
+        </header>
+        
+        <main>
+            <!-- Objetivo -->
+            <section class="section">
+                <h2>Objetivo da Atividade</h2>
+                <p>Ajudar os casais a compreender que devem amar-se e cuidar um do outro como parceiros iguais, suprimir atitudes e comportamentos que resultem em desigualdade e domínio injusto, e trabalhar juntos para alcançar felicidade e união verdadeiras.</p>
+                
+                <div class="quote-box">
+                    "Não pode haver inferioridade ou superioridade entre o marido e a mulher no plano do Senhor."
+                    <div class="quote-author">— Presidente Gordon B. Hinckley</div>
+                </div>
+            </section>
+            
+            <!-- Princípios Fundamentais -->
+            <section class="section">
+                <h2>Princípios Fundamentais da Igualdade</h2>
+                
+                <div class="key-principles">
+                    <div class="principle">
+                        <h4>Parceria Igual</h4>
+                        <p>Marido e mulher caminham "lado a lado com respeito, gratidão e amor". Não há inferioridade ou superioridade entre eles.</p>
+                    </div>
+                    
+                    <div class="principle">
+                        <h4>Unidade Divina</h4>
+                        <p>O Senhor mandou: "Sejam um". A unidade é essencial no plano de Deus para o casamento.</p>
+                    </div>
+                    
+                    <div class="principle">
+                        <h4>Liderança Justa</h4>
+                        <p>Quem lidera deve fazê-lo "com amor e retidão", nunca com "injusto domínio".</p>
+                    </div>
+                    
+                    <div class="principle">
+                        <h4>Complementaridade</h4>
+                        <p>As capacidades complementares de marido e mulher se unem para criar algo maior quando trabalham em parceria.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 1: Teste de Igualdade -->
+            <section class="section">
+                <h2>Atividade 1: Teste de Igualdade no Relacionamento</h2>
+                
+                <div class="activity-card">
+                    <h3>Como Realizar a Atividade</h3>
+                    <div class="steps">
+                        <ol>
+                            <li><strong>Avaliação Pessoal:</strong> Cada cônjuge avalia a si mesmo usando a escala de 1 a 5 em cada item abaixo</li>
+                            <li><strong>Avaliação do Cônjuge:</strong> Cada pessoa também estima como acha que o cônjuge a avaliaria</li>
+                            <li><strong>Comparação:</strong> Compare suas avaliações com as do cônjuge</li>
+                            <li><strong>Reflexão:</strong> Identifique pontos fortes e áreas que precisam melhorar</li>
+                            <li><strong>Planejamento:</strong> Desenvolva um plano para melhorias nas próximas semanas</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3>Inventário de Igualdade no Relacionamento</h3>
+                <p><strong>Escala:</strong> 1 — Nunca | 2 — Raramente | 3 — Às vezes | 4 — Frequentemente | 5 — Sempre</p>
+                
+                <div class="inventory">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspectos do Relacionamento</th>
+                                <th>Minhas Avaliações</th>
+                                <th>Como Acho que Meu Cônjuge Me Avaliaria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lidero nossa família de acordo com as diretrizes das escrituras</td>
+                                <td class="scale"><input type="radio" name="item1-self"> 1 <input type="radio" name="item1-self"> 2 <input type="radio" name="item1-self"> 3 <input type="radio" name="item1-self"> 4 <input type="radio" name="item1-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item1-spouse"> 1 <input type="radio" name="item1-spouse"> 2 <input type="radio" name="item1-spouse"> 3 <input type="radio" name="item1-spouse"> 4 <input type="radio" name="item1-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Sou amoroso com meu cônjuge e filhos, que sentem meu amor por eles</td>
+                                <td class="scale"><input type="radio" name="item2-self"> 1 <input type="radio" name="item2-self"> 2 <input type="radio" name="item2-self"> 3 <input type="radio" name="item2-self"> 4 <input type="radio" name="item2-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item2-spouse"> 1 <input type="radio" name="item2-spouse"> 2 <input type="radio" name="item2-spouse"> 3 <input type="radio" name="item2-spouse"> 4 <input type="radio" name="item2-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Respeito os membros da família e não me irrito facilmente nem os maltrato</td>
+                                <td class="scale"><input type="radio" name="item3-self"> 1 <input type="radio" name="item3-self"> 2 <input type="radio" name="item3-self"> 3 <input type="radio" name="item3-self"> 4 <input type="radio" name="item3-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item3-spouse"> 1 <input type="radio" name="item3-spouse"> 2 <input type="radio" name="item3-spouse"> 3 <input type="radio" name="item3-spouse"> 4 <input type="radio" name="item3-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Minha maior prioridade no casamento é tratar meu cônjuge com amor e bondade</td>
+                                <td class="scale"><input type="radio" name="item4-self"> 1 <input type="radio" name="item4-self"> 2 <input type="radio" name="item4-self"> 3 <input type="radio" name="item4-self"> 4 <input type="radio" name="item4-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item4-spouse"> 1 <input type="radio" name="item4-spouse"> 2 <input type="radio" name="item4-spouse"> 3 <input type="radio" name="item4-spouse"> 4 <input type="radio" name="item4-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Vivo de modo que meu cônjuge queira estar comigo para a eternidade</td>
+                                <td class="scale"><input type="radio" name="item5-self"> 1 <input type="radio" name="item5-self"> 2 <input type="radio" name="item5-self"> 3 <input type="radio" name="item5-self"> 4 <input type="radio" name="item5-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item5-spouse"> 1 <input type="radio" name="item5-spouse"> 2 <input type="radio" name="item5-spouse"> 3 <input type="radio" name="item5-spouse"> 4 <input type="radio" name="item5-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Trato meu cônjuge como um parceiro igual</td>
+                                <td class="scale"><input type="radio" name="item6-self"> 1 <input type="radio" name="item6-self"> 2 <input type="radio" name="item6-self"> 3 <input type="radio" name="item6-self"> 4 <input type="radio" name="item6-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item6-spouse"> 1 <input type="radio" name="item6-spouse"> 2 <input type="radio" name="item6-spouse"> 3 <input type="radio" name="item6-spouse"> 4 <input type="radio" name="item6-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Vivo de modo a propiciar a influência do Espírito em nosso lar</td>
+                                <td class="scale"><input type="radio" name="item7-self"> 1 <input type="radio" name="item7-self"> 2 <input type="radio" name="item7-self"> 3 <input type="radio" name="item7-self"> 4 <input type="radio" name="item7-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item7-spouse"> 1 <input type="radio" name="item7-spouse"> 2 <input type="radio" name="item7-spouse"> 3 <input type="radio" name="item7-spouse"> 4 <input type="radio" name="item7-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Tento resolver problemas por meio do diálogo</td>
+                                <td class="scale"><input type="radio" name="item8-self"> 1 <input type="radio" name="item8-self"> 2 <input type="radio" name="item8-self"> 3 <input type="radio" name="item8-self"> 4 <input type="radio" name="item8-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item8-spouse"> 1 <input type="radio" name="item8-spouse"> 2 <input type="radio" name="item8-spouse"> 3 <input type="radio" name="item8-spouse"> 4 <input type="radio" name="item8-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Tento entender e respeitar os pensamentos e sentimentos de meu cônjuge</td>
+                                <td class="scale"><input type="radio" name="item9-self"> 1 <input type="radio" name="item9-self"> 2 <input type="radio" name="item9-self"> 3 <input type="radio" name="item9-self"> 4 <input type="radio" name="item9-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item9-spouse"> 1 <input type="radio" name="item9-spouse"> 2 <input type="radio" name="item9-spouse"> 3 <input type="radio" name="item9-spouse"> 4 <input type="radio" name="item9-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Respeito as necessidades de espaço e privacidade de meu cônjuge</td>
+                                <td class="scale"><input type="radio" name="item10-self"> 1 <input type="radio" name="item10-self"> 2 <input type="radio" name="item10-self"> 3 <input type="radio" name="item10-self"> 4 <input type="radio" name="item10-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item10-spouse"> 1 <input type="radio" name="item10-spouse"> 2 <input type="radio" name="item10-spouse"> 3 <input type="radio" name="item10-spouse"> 4 <input type="radio" name="item10-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Decidimos como parceiros iguais como gastar nosso dinheiro</td>
+                                <td class="scale"><input type="radio" name="item11-self"> 1 <input type="radio" name="item11-self"> 2 <input type="radio" name="item11-self"> 3 <input type="radio" name="item11-self"> 4 <input type="radio" name="item11-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item11-spouse"> 1 <input type="radio" name="item11-spouse"> 2 <input type="radio" name="item11-spouse"> 3 <input type="radio" name="item11-spouse"> 4 <input type="radio" name="item11-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Dividimos as tarefas domésticas quando estamos em casa</td>
+                                <td class="scale"><input type="radio" name="item12-self"> 1 <input type="radio" name="item12-self"> 2 <input type="radio" name="item12-self"> 3 <input type="radio" name="item12-self"> 4 <input type="radio" name="item12-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item12-spouse"> 1 <input type="radio" name="item12-spouse"> 2 <input type="radio" name="item12-spouse"> 3 <input type="radio" name="item12-spouse"> 4 <input type="radio" name="item12-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Tento ajudar meu cônjuge a achar tempo e recursos para desenvolver seus talentos e dedicar-se a seus interesses</td>
+                                <td class="scale"><input type="radio" name="item13-self"> 1 <input type="radio" name="item13-self"> 2 <input type="radio" name="item13-self"> 3 <input type="radio" name="item13-self"> 4 <input type="radio" name="item13-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item13-spouse"> 1 <input type="radio" name="item13-spouse"> 2 <input type="radio" name="item13-spouse"> 3 <input type="radio" name="item13-spouse"> 4 <input type="radio" name="item13-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Temos as mesmas metas espirituais e o mesmo compromisso de viver o evangelho</td>
+                                <td class="scale"><input type="radio" name="item14-self"> 1 <input type="radio" name="item14-self"> 2 <input type="radio" name="item14-self"> 3 <input type="radio" name="item14-self"> 4 <input type="radio" name="item14-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item14-spouse"> 1 <input type="radio" name="item14-spouse"> 2 <input type="radio" name="item14-spouse"> 3 <input type="radio" name="item14-spouse"> 4 <input type="radio" name="item14-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Nós dois participamos da disciplina dos filhos</td>
+                                <td class="scale"><input type="radio" name="item15-self"> 1 <input type="radio" name="item15-self"> 2 <input type="radio" name="item15-self"> 3 <input type="radio" name="item15-self"> 4 <input type="radio" name="item15-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item15-spouse"> 1 <input type="radio" name="item15-spouse"> 2 <input type="radio" name="item15-spouse"> 3 <input type="radio" name="item15-spouse"> 4 <input type="radio" name="item15-spouse"> 5</td>
+                            </tr>
+                            <tr>
+                                <td>Nós dois nos sentimos bem quanto ao papel de líder do marido</td>
+                                <td class="scale"><input type="radio" name="item16-self"> 1 <input type="radio" name="item16-self"> 2 <input type="radio" name="item16-self"> 3 <input type="radio" name="item16-self"> 4 <input type="radio" name="item16-self"> 5</td>
+                                <td class="scale"><input type="radio" name="item16-spouse"> 1 <input type="radio" name="item16-spouse"> 2 <input type="radio" name="item16-spouse"> 3 <input type="radio" name="item16-spouse"> 4 <input type="radio" name="item16-spouse"> 5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="reflection-questions">
+                    <h4>Perguntas para Reflexão Após Completar o Inventário:</h4>
+                    <ul>
+                        <li>Em quais áreas vocês apresentam as melhores avaliações (pontos fortes)?</li>
+                        <li>Onde há diferenças entre sua avaliação e a que o cônjuge faria?</li>
+                        <li>Quais áreas precisam de mais atenção e melhora?</li>
+                        <li>Como vocês podem trabalhar juntos para melhorar em uma dessas áreas?</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Atividade 2: Identificar Comportamento Controlador -->
+            <section class="section">
+                <h2>Atividade 2: Identificar o Comportamento Controlador</h2>
+                
+                <div class="activity-card">
+                    <h3>Propósito</h3>
+                    <p>Reconhecer e refletir sobre formas de controle que afetam o relacionamento, impedindo a igualdade e a parceria.</p>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>⚠️ Formas Comuns de Domínio Injusto</h4>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Tentar controlar o processo de tomada de decisões</li>
+                        <li>Exercer autoridade sobre as finanças sem permitir participação igual</li>
+                        <li>Dominar a resolução de problemas e disciplina dos filhos</li>
+                        <li>Criticar constantemente as escolhas do cônjuge</li>
+                        <li>Impedir que o cônjuge expresse suas opiniões</li>
+                        <li>Usar a raiva ou ameaças para manter controle</li>
+                        <li>Isolar o cônjuge de amigos e família</li>
+                    </ul>
+                </div>
+                
+                <h3>Exercício de Autorreflexão</h3>
+                <div class="action-plan">
+                    <h4>Minhas Formas de Comportamento Controlador:</h4>
+                    <p style="margin-bottom: 10px;">Reflita honestamente: De que maneiras você tende a ser controlador(a) no relacionamento?</p>
+                    <textarea placeholder="Escreva aqui suas observações..."></textarea>
+                </div>
+                
+                <div class="steps">
+                    <h4>Se desejar, siga estes passos:</h4>
+                    <ol>
+                        <li>Escreva as maneiras que você tende a ser controlador(a)</li>
+                        <li>Se sentir confortável, peça a opinião honesta de seu cônjuge</li>
+                        <li>Considere como isso afeta o relacionamento</li>
+                        <li>Procure entender por trás dessa necessidade de controlar</li>
+                        <li>Desenvolva um plano para reduzir esse comportamento</li>
+                    </ol>
+                </div>
+            </section>
+            
+            <!-- Atividade 3: Modificar Pensamentos Distorcidos -->
+            <section class="section">
+                <h2>Atividade 3: Modificar Pensamentos Distorcidos</h2>
+                
+                <div class="activity-card">
+                    <h3>Compreender a Raiz do Controle</h3>
+                    <p>Os pensamentos distorcidos frequentemente respaldam o comportamento controlador. Identificar e corrigir esses pensamentos é essencial para mudar comportamentos.</p>
+                </div>
+                
+                <h3>Padrões de Pensamento Distorcido Comuns</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div style="background: #fff5f5; border: 2px solid #e53935; padding: 20px; border-radius: 8px;">
+                        <h4 style="color: #e53935; margin-bottom: 10px;">❌ Pensamento Distorcido</h4>
+                        <p style="margin-bottom: 15px;">"Minha esposa não é boa na administração de um orçamento, então devo controlar todo o dinheiro."</p>
+                        <h4 style="color: #43a047; margin-bottom: 10px;">✓ Pensamento Corrigido</h4>
+                        <p>"Minha esposa tem habilidades em algumas áreas e eu em outras. Juntos, podemos tomar melhores decisões financeiras."</p>
+                    </div>
+                    
+                    <div style="background: #fff5f5; border: 2px solid #e53935; padding: 20px; border-radius: 8px;">
+                        <h4 style="color: #e53935; margin-bottom: 10px;">❌ Pensamento Distorcido</h4>
+                        <p style="margin-bottom: 15px;">"Se as coisas não forem feitas do meu jeito, tudo vai dar errado."</p>
+                        <h4 style="color: #43a047; margin-bottom: 10px;">✓ Pensamento Corrigido</h4>
+                        <p>"Existem várias maneiras boas de fazer as coisas. O modo de meus cônjuges pode ser tão válido quanto o meu."</p>
+                    </div>
+                    
+                    <div style="background: #fff5f5; border: 2px solid #e53935; padding: 20px; border-radius: 8px;">
+                        <h4 style="color: #e53935; margin-bottom: 10px;">❌ Pensamento Distorcido</h4>
+                        <p style="margin-bottom: 15px;">"Meu marido não tem direito de gastar nosso dinheiro sem minha aprovação."</p>
+                        <h4 style="color: #43a047; margin-bottom: 10px;">✓ Pensamento Corrigido</h4>
+                        <p>"Somos parceiros iguais. Devemos conversar sobre gastos importantes juntos, mas isso é uma decisão compartilhada."</p>
+                    </div>
+                </div>
+                
+                <h3>Exercício: Identificar Seus Pensamentos Distorcidos</h3>
+                <div class="action-plan">
+                    <h4>Meus Pensamentos Controladores e Suas Distorções:</h4>
+                    <p style="margin-bottom: 10px;">1. Qual é o comportamento controlador que identifiquei na Atividade 2?</p>
+                    <textarea placeholder="Descreva o comportamento..."></textarea>
+                    
+                    <p style="margin: 15px 0 10px 0;">2. Que pensamentos estão por trás desse comportamento?</p>
+                    <textarea placeholder="Que crenças justificam esse comportamento?"></textarea>
+                    
+                    <p style="margin: 15px 0 10px 0;">3. Onde estão as distorções nesse pensamento? (Compare com Doutrina e Convênios 121:41-42)</p>
+                    <textarea placeholder="Identifique as distorções..."></textarea>
+                    
+                    <p style="margin: 15px 0 10px 0;">4. Como poderia repensar essa situação de forma mais saudável?</p>
+                    <textarea placeholder="Escreva pensamentos corrigidos..."></textarea>
+                </div>
+                
+                <div class="quote-box">
+                    "E nenhuma influência prevalecerá sobre mim, senão por persuasão, por longanimidade, por gentileza, e por amor genuíno; por bondade e conhecimento puro..." (D&C 121:41-42)
+                    <div class="quote-author">— Doutrina e Convênios</div>
+                </div>
+            </section>
+            
+            <!-- Atividade 4: Determinar Quem Deve Decidir -->
+            <section class="section">
+                <h2>Atividade 4: Determinar Quem Deve Decidir</h2>
+                
+                <div class="activity-card">
+                    <h3>Objetivo</h3>
+                    <p>Compreender quando decisões devem ser tomadas conjuntamente e quando um cônjuge pode decidir independentemente, mantendo sempre a igualdade e o respeito.</p>
+                </div>
+                
+                <h3>Cinco Formas de Tomar Decisões:</h3>
+                <div class="decision-list">
+                    <h4>1. O marido e a mulher decidem juntos</h4>
+                    <p style="margin-bottom: 10px;">Tipo de decisão: Questões que afetam ambos e a família como um todo</p>
+                </div>
+                
+                <div class="decision-list">
+                    <h4>2. A mulher toma a decisão depois de consultar o marido</h4>
+                    <p style="margin-bottom: 10px;">Tipo de decisão: Assuntos que a afetam especialmente, mas merece sua entrada</p>
+                </div>
+                
+                <div class="decision-list">
+                    <h4>3. O marido toma a decisão depois de consultar a esposa</h4>
+                    <p style="margin-bottom: 10px;">Tipo de decisão: Assuntos que o afetam especialmente, mas merece sua entrada</p>
+                </div>
+                
+                <div class="decision-list">
+                    <h4>4. Somente a mulher decide</h4>
+                    <p style="margin-bottom: 10px;">Tipo de decisão: Assuntos pessoais que afetam apenas a ela</p>
+                </div>
+                
+                <div class="decision-list">
+                    <h4>5. Somente o marido decide</h4>
+                    <p style="margin-bottom: 10px;">Tipo de decisão: Assuntos pessoais que afetam apenas a ele</p>
+                </div>
+                
+                <h3>Exercício: Classificar Decisões</h3>
+                <p style="margin-bottom: 15px;">Para cada questão abaixo, indique qual tipo de decisão você acha que deveria ser (1-5) e compare com seu cônjuge:</p>
+                
+                <div class="decision-list" style="border: none; background: none; padding: 0;">
+                    <ol style="margin-left: 25px;">
+                        <li style="margin-bottom: 15px;">Onde a família deve morar?</li>
+                        <li style="margin-bottom: 15px;">Que emprego o marido deve ter?</li>
+                        <li style="margin-bottom: 15px;">Quantos filhos o casal deve ter?</li>
+                        <li style="margin-bottom: 15px;">A esposa deve trabalhar fora?</li>
+                        <li style="margin-bottom: 15px;">Como devem gastar seu dinheiro?</li>
+                        <li style="margin-bottom: 15px;">Como e quando disciplinar os filhos?</li>
+                        <li style="margin-bottom: 15px;">Que hobbies a esposa deve ter?</li>
+                        <li style="margin-bottom: 15px;">Quanto tempo dedicar a atividades da Igreja?</li>
+                        <li style="margin-bottom: 15px;">Aonde a família deve ir nas férias?</li>
+                        <li style="margin-bottom: 15px;">Quanto doar à Igreja ou caridade?</li>
+                    </ol>
+                </div>
+                
+                <div class="reflection-questions">
+                    <h4>Depois de Comparar Respostas:</h4>
+                    <ul>
+                        <li>Onde vocês concordam?</li>
+                        <li>Onde há diferenças de opinião?</li>
+                        <li>Como vocês podem chegar a um acordo?</li>
+                        <li>Um cônjuge quer mais envolvimento nas decisões?</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Atividade 5: Desenvolver Maior Unidade -->
+            <section class="section">
+                <h2>Atividade 5: Desenvolver Maior Unidade</h2>
+                
+                <div class="activity-card">
+                    <h3>Transformar Compreensão em Ação</h3>
+                    <p>As reflexões acima são apenas o começo. Agora é hora de desenvolver um plano concreto para implementar mudanças que promovam igualdade e unidade.</p>
+                </div>
+                
+                <h3>Fatores que Facilitam a Mudança:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #e8f5e9; border-left: 5px solid #4caf50; padding: 15px; border-radius: 5px;">
+                        <h4 style="color: #2e7d32; margin-bottom: 8px;">✓ Reconhecer a Necessidade</h4>
+                        <p style="font-size: 14px; color: #555;">Admitir que mudança é necessária</p>
+                    </div>
+                    
+                    <div style="background: #e8f5e9; border-left: 5px solid #4caf50; padding: 15px; border-radius: 5px;">
+                        <h4 style="color: #2e7d32; margin-bottom: 8px;">✓ Expressar Verbalmente</h4>
+                        <p style="font-size: 14px; color: #555;">Comunicar o desejo de mudar</p>
+                    </div>
+                    
+                    <div style="background: #e8f5e9; border-left: 5px solid #4caf50; padding: 15px; border-radius: 5px;">
+                        <h4 style="color: #2e7d32; margin-bottom: 8px;">✓ Comprometer-se</h4>
+                        <p style="font-size: 14px; color: #555;">Fazer acordo com o cônjuge</p>
+                    </div>
+                    
+                    <div style="background: #e8f5e9; border-left: 5px solid #4caf50; padding: 15px; border-radius: 5px;">
+                        <h4 style="color: #2e7d32; margin-bottom: 8px;">✓ Formular Plano</h4>
+                        <p style="font-size: 14px; color: #555;">Passos específicos e metas intermédias</p>
+                    </div>
+                    
+                    <div style="background: #e8f5e9; border-left: 5px solid #4caf50; padding: 15px; border-radius: 5px;">
+                        <h4 style="color: #2e7d32; margin-bottom: 8px;">✓ Rede de Apoio</h4>
+                        <p style="font-size: 14px; color: #555;">Pessoas que incentivam a mudança</p>
+                    </div>
+                    
+                    <div style="background: #e8f5e9; border-left: 5px solid #4caf50; padding: 15px; border-radius: 5px;">
+                        <h4 style="color: #2e7d32; margin-bottom: 8px;">✓ Prestar Contas</h4>
+                        <p style="font-size: 14px; color: #555;">Relatar progresso regularmente</p>
+                    </div>
+                </div>
+                
+                <h3>Meu Plano de Ação para Maior Unidade</h3>
+                <div class="action-plan">
+                    <h4>Passo 1: Qual princípio é o mais importante para mim agora?</h4>
+                    <p style="margin-bottom: 10px;">Escolha um dos tópicos das atividades anteriores que seja prioritário para o seu casamento:</p>
+                    <ul style="margin-left: 25px; margin-bottom: 15px;">
+                        <li>Igualdade e respeito mútuo</li>
+                        <li>Reduzir comportamentos controladores</li>
+                        <li>Corrigir pensamentos distorcidos</li>
+                        <li>Melhorar a tomada de decisões juntos</li>
+                    </ul>
+                    <textarea placeholder="Qual princípio você escolhe?" style="margin-bottom: 15px;"></textarea>
+                    
+                    <h4>Passo 2: Por que é importante para você?</h4>
+                    <textarea placeholder="Explique a importância..." style="margin-bottom: 15px;"></textarea>
+                    
+                    <h4>Passo 3: Ações Específicas (próximas 4 semanas)</h4>
+                    <p style="margin-bottom: 10px;">Semana 1:</p>
+                    <textarea placeholder="O que vou fazer esta semana?" style="margin-bottom: 15px;"></textarea>
+                    
+                    <p style="margin-bottom: 10px;">Semana 2:</p>
+                    <textarea placeholder="O que vou fazer na semana 2?" style="margin-bottom: 15px;"></textarea>
+                    
+                    <p style="margin-bottom: 10px;">Semana 3:</p>
+                    <textarea placeholder="O que vou fazer na semana 3?" style="margin-bottom: 15px;"></textarea>
+                    
+                    <p style="margin-bottom: 10px;">Semana 4:</p>
+                    <textarea placeholder="O que vou fazer na semana 4?" style="margin-bottom: 15px;"></textarea>
+                    
+                    <h4>Passo 4: Como você saberá que está progredindo?</h4>
+                    <textarea placeholder="Que sinais de progresso você espera observar?"></textarea>
+                </div>
+                
+                <div class="success-box">
+                    <h4>💪 Recorde-se</h4>
+                    <p>"Ao investirem tempo e energia para promover a união e a igualdade, os cônjuges se desenvolverão individualmente e como casal e trarão um novo fôlego ao casamento. Também terão maior amor e respeito um pelo outro."</p>
+                </div>
+            </section>
+            
+            <!-- Conclusão -->
+            <section class="section">
+                <h2>Conclusão</h2>
+                <p>A igualdade e a unidade no casamento não são ideais inatingíveis — são possibilidades reais e necessárias. Quando os cônjuges trabalham juntos como parceiros iguais, suportados pela integridade e pelo amor christão, eles experimentam um poder sinérgico que os fortalece individualmente e como casal. As mudanças podem ser difíceis, mas as recompensas — maior amor, respeito e compreensão — valem muito o esforço.</p>
+                
+                <div class="quote-box">
+                    "Paradoxalmente, quanto mais servimos um ao outro, maior é nosso crescimento espiritual e emocional."
+                    <div class="quote-author">— Presidente Ezra Taft Benson</div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <a href="atividade2.html">⬅️ Anterior</a>
+            <a href="index.html">🏠 Início</a>
+            <a href="atividade4.html">➡️ Próxima</a>
+        </footer>
+    </div>
+</body>
+</html>

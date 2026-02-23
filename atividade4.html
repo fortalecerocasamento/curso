@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Atividade 4 - Vencer a Ira</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        main {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #d32f2f;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #d32f2f;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #b71c1c;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+        }
+        
+        .quote-box {
+            background: #fff5f5;
+            border-left: 5px solid #d32f2f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-top: 10px;
+        }
+        
+        .activity-card {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #d32f2f;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .activity-card h3 {
+            color: #d32f2f;
+            margin-bottom: 15px;
+        }
+        
+        .warning-box {
+            background: #fff3e0;
+            border: 2px solid #ff6f00;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .warning-box h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        
+        .warning-box ul {
+            margin-left: 25px;
+        }
+        
+        .warning-box li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .success-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .success-box h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .success-box p {
+            color: #555;
+        }
+        
+        .form-section {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            min-height: 100px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d32f2f;
+            box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #d32f2f;
+            box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
+        }
+        
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .slider-container input[type="range"] {
+            flex: 1;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #d32f2f;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .slider-container input[type="range"]::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #d32f2f;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .slider-value {
+            min-width: 50px;
+            text-align: center;
+            font-weight: bold;
+            color: #d32f2f;
+            font-size: 18px;
+        }
+        
+        .cycle-box {
+            background: white;
+            border: 2px solid #d32f2f;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .cycle-box h4 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .cycle-box p {
+            color: #555;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #d32f2f;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .card h4 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+        }
+        
+        .card p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .table-responsive table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .table-responsive th {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .table-responsive td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .table-responsive tr:hover {
+            background: #fff5f5;
+        }
+        
+        .reflection-box {
+            background: #f3e5f5;
+            border-left: 5px solid #7b1fa2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .reflection-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 15px;
+        }
+        
+        .reflection-box ul {
+            margin-left: 25px;
+        }
+        
+        .reflection-box li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .step-by-step {
+            background: white;
+            border: 2px solid #d32f2f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .step-by-step ol {
+            margin-left: 25px;
+        }
+        
+        .step-by-step li {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .example-box {
+            background: #fff9c4;
+            border: 2px dashed #f9a825;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .example-box h4 {
+            color: #f57f17;
+            margin-bottom: 10px;
+        }
+        
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+.container {
+  width: 100%;
+  max-width: 100vw;
+  background: white;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  -webkit-overflow-scrolling: touch;
+}
+
+footer {
+  background: #f5f5f5;
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+footer a {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: bold;
+  flex: 1;
+  min-width: 70px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+footer a:active {
+  background: #d32f2f;
+  color: white;
+}
+
+input, textarea, select {
+  font-size: 16px !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  h1, h2 {
+    font-size: 18px;
+  }
+  .section {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 22px;
+            }
+            
+            .section h2 {
+                font-size: 18px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .slider-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Atividade 4: Vencer a Ira</h1>
+            <p>Quarta Sessão - Fortalecer o Casamento</p>
+        </header>
+        
+        <main>
+            <!-- Objetivo -->
+            <section class="section">
+                <h2>Objetivo da Atividade</h2>
+                <p>Ajudar os casais a entender os problemas e custos da ira, compreender os fatores que influenciam a ira, e aprender maneiras práticas e espirituais de vencer a ira e restaurar a paz em seus relacionamentos.</p>
+                
+                <div class="quote-box">
+                    "Quem pode calcular as feridas infligidas, com profundidade e dor, pelas palavras duras e cruéis pronunciadas com ira?"
+                    <div class="quote-author">— Presidente Gordon B. Hinckley</div>
+                </div>
+            </section>
+            
+            <!-- Custos da Ira -->
+            <section class="section">
+                <h2>Os Custos da Ira</h2>
+                
+                <div class="warning-box">
+                    <h4>⚠️ Consequências Pessoais da Ira</h4>
+                    <ul>
+                        <li>Perda do Espírito Santo</li>
+                        <li>Perda de respeito por si mesmo e dos outros</li>
+                        <li>Sentimentos de culpa e vergonha</li>
+                        <li>Solidão e isolamento</li>
+                        <li>Relacionamentos prejudicados ou destruídos</li>
+                        <li>Problemas de saúde física</li>
+                        <li>Perda de confiança dos filhos nos pais</li>
+                        <li>Divórcio e problemas legais</li>
+                        <li>Perda do emprego</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Atividade 1: Reconhecer Consequências -->
+            <section class="section">
+                <h2>Atividade 1: Reconhecer as Consequências da Ira</h2>
+                
+                <div class="activity-card">
+                    <h3>Propósito</h3>
+                    <p>Pessoas com problemas de ira frequentemente negam ou minimizam as consequências de seus acessos de fúria. Reconhecer plenamente esses efeitos pode aumentar a motivação para superar o problema.</p>
+                </div>
+                
+                <h3>Reflita: Minhas Últimas Crises de Ira</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>1. Descreva a última vez em que você se permitiu ficar enraivecido:</label>
+                        <textarea placeholder="O que aconteceu? Quem estava envolvido? Como você agiu?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>2. Que consequências você sofreu por ter perdido o autocontrole?</label>
+                        <textarea placeholder="Liste todas as consequências negativas que resultaram dessa explosão de ira..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>3. Como sua ira afetou as pessoas ao seu redor? (cônjuge, filhos, amigos, colegas)</label>
+                        <textarea placeholder="Descreva o impacto em cada pessoa..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>4. Como se sentiu depois de sua explosão?</label>
+                        <textarea placeholder="Culpa, vergonha, arrependimento, remorso?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>5. O que você gostaria de ter feito diferentemente?</label>
+                        <textarea placeholder="Como poderia ter reagido de forma mais saudável?"></textarea>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <h4>💡 Dica Importante</h4>
+                    <p>Consulte regularmente suas respostas acima quando sentir que a ira está começando. O fato de lembrar-se das consequências pode ser uma grande motivação para superá-las. Conforme você progride, você pode riscar itens da lista.</p>
+                </div>
+            </section>
+            
+            <!-- Atividade 2: Ciclo da Ira -->
+            <section class="section">
+                <h2>Atividade 2: Determinar Seu Ciclo de Ira</h2>
+                
+                <div class="activity-card">
+                    <h3>O Ciclo da Ira em 4 Fases</h3>
+                    <p>O comportamento colérico tende a ser cíclico, seguindo um padrão previsível. Compreender seu ciclo é essencial para interrompi-lo.</p>
+                </div>
+                
+                <div class="two-column">
+                    <div class="cycle-box">
+                        <h4>1️⃣ Fase de Fingir a Normalidade</h4>
+                        <p>Tudo parece correr bem, mas a ira esconde-se abaixo da superfície. Pensamentos distorcidos estão ativos.</p>
+                    </div>
+                    
+                    <div class="cycle-box">
+                        <h4>2️⃣ Fase de Acumulação</h4>
+                        <p>A ira se acumula. Surgem sinais físicos: tensão, tremores, taquicardia, aceleramento da respiração.</p>
+                    </div>
+                    
+                    <div class="cycle-box">
+                        <h4>3️⃣ Fase de Ação</h4>
+                        <p>A ira é descarregada: gritos, humilhações, agressões físicas ou comportamentos destrutivos.</p>
+                    </div>
+                    
+                    <div class="cycle-box">
+                        <h4>4️⃣ Fase de Arrependimento</h4>
+                        <p>Culpa, vergonha e promessas de mudança. Depois, o ciclo recomeça.</p>
+                    </div>
+                </div>
+                
+                <h3>Meu Ciclo Pessoal de Ira</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Situações que Geralmente Desencadeiam Minha Ira:</strong></label>
+                        <textarea placeholder="O que geralmente dispara sua raiva? (ex: meu cônjuge discute comigo, pressão no trabalho, filhos não obedecem)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Pensamentos ou Justificativas que Alimentam Minha Fúria:</strong></label>
+                        <textarea placeholder="Que coisas você pensa? (ex: 'Ele não se importa comigo', 'Ninguém me respeita')"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Sentimentos Subjacentes à Minha Raiva:</strong></label>
+                        <p style="margin-bottom: 10px; margin-top: -10px; font-size: 14px; color: #666;">(desrespeitado, ignorado, injustiçado, impotente, rejeitado, magoado, com medo)</p>
+                        <textarea placeholder="Como você realmente se sente por baixo da raiva?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Sinais Físicos que Indicam que Estou Ficando Irritado:</strong></label>
+                        <p style="margin-bottom: 10px; margin-top: -10px; font-size: 14px; color: #666;">(mãos tremendo, rosto quente, taquicardia, tensão nos ombros, respiração acelerada)</p>
+                        <textarea placeholder="Que sinais você observa no seu corpo quando a ira começa a aumentar?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>O Que Faço que Alimenta Minha Ira:</strong></label>
+                        <textarea placeholder="Como você intensifica a ira? (remoer, recusar-se a falar, beber, revidar)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como Eu Extravio Minha Ira (Meus Piores Comportamentos):</strong></label>
+                        <textarea placeholder="Como você expressa sua ira quando perde o controle?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como Me Sinto Depois de Extravasar Minha Fúria:</strong></label>
+                        <textarea placeholder="Alívio, culpa, satisfação, arrependimento, vergonha?"></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 3: Registro de Ira -->
+            <section class="section">
+                <h2>Atividade 3: Manter um Registro dos Acessos de Ira</h2>
+                
+                <div class="activity-card">
+                    <h3>Propósito</h3>
+                    <p>Manter um registro detalhado de cada episódio de ira ajuda você a reconhecer padrões, entender os gatilhos, e aprender a lidar com a ira de forma mais eficaz.</p>
+                </div>
+                
+                <div class="example-box">
+                    <h4>📋 Exemplo de Preenchimento</h4>
+                    <p><strong>Data:</strong> 10/19 | <strong>Situação:</strong> Discussão com o marido sobre finanças</p>
+                    <p><strong>Intensidade:</strong> 8/10 | <strong>Pensamentos:</strong> "Ele é irresponsável e não se importa!"</p>
+                    <p><strong>Sentimentos:</strong> Ignorada, não valorizada | <strong>Como lidei:</strong> Gritei e chamei-o de nomes</p>
+                    <p><strong>Sucesso ao controlar:</strong> 2/10 | <strong>O que ajudou:</strong> Nada — piorou tudo</p>
+                    <p><strong>Próxima vez farei:</strong> Farei uma pausa antes de responder</p>
+                </div>
+                
+                <h3>Modelo de Registro: Situação 1</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>Data e Situação que Desencadeou a Ira:</label>
+                        <input type="text" placeholder="Ex: 15/02 - Discussão sobre horário de trabalho">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Intensidade da Ira (escala 1-10):</label>
+                        <div class="slider-container">
+                            <span>Branda (1)</span>
+                            <input type="range" min="1" max="10" value="5" onchange="document.getElementById('intensity1').innerText = this.value">
+                            <span>Grave (10)</span>
+                            <span class="slider-value" id="intensity1">5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Pensamentos que Alimentaram Minha Ira:</label>
+                        <textarea placeholder="Ex: 'Ele nunca me ouve', 'Não faço diferença para ele'"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Sentimentos por Trás da Ira:</label>
+                        <textarea placeholder="Ex: Magoado, desrespeitado, ignorado, impotente"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Como Lidei com Minha Ira:</label>
+                        <textarea placeholder="O que você fez? Gritou, agrediu verbalmente, se isolou?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Frases que Disse para Mim Mesmo para Lidar com a Ira:</label>
+                        <textarea placeholder="Que pensamentos você teve (positivos ou negativos)?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Sucesso ao Controlar Minha Ira (1-10):</label>
+                        <div class="slider-container">
+                            <span>Nenhum (1)</span>
+                            <input type="range" min="1" max="10" value="5" onchange="document.getElementById('success1').innerText = this.value">
+                            <span>Grande (10)</span>
+                            <span class="slider-value" id="success1">5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>O que Parece ter Ajudado?</label>
+                        <textarea placeholder="O que funcionou para lidar melhor com a situação?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Ira Suprimida, Extravasada ou Resolvida?</label>
+                        <select>
+                            <option>-- Selecione --</option>
+                            <option>Suprimida (guardei os sentimentos)</option>
+                            <option>Extravasada (expressada de forma prejudicial)</option>
+                            <option>Resolvida (expressa de forma saudável)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>O que Farei Melhor na Próxima Vez?</label>
+                        <textarea placeholder="Como você pode reagir diferentemente em situação similar?"></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 4: Resistir a Pensamentos Negativos -->
+            <section class="section">
+                <h2>Atividade 4: Resistir a Pensamentos Negativos</h2>
+                
+                <div class="activity-card">
+                    <h3>Compreender a Conexão Pensamento-Emoção-Comportamento</h3>
+                    <p>Não são os acontecimentos que causam ira, mas a maneira como você pensa sobre eles. Mudar seus pensamentos pode mudar seus sentimentos e comportamentos.</p>
+                </div>
+                
+                <h3>Padrões Comuns de Pensamento Distorcido</h3>
+                
+                <div class="two-column">
+                    <div class="card" style="border-color: #e53935;">
+                        <h4>❌ Tudo ou Nada</h4>
+                        <p>"Ele fez uma coisa errada, então é completamente irresponsável. Nunca posso confiar nele."</p>
+                    </div>
+                    
+                    <div class="card" style="border-color: #e53935;">
+                        <h4>❌ Conclusões Precipitadas</h4>
+                        <p>"Ela ficou quieta, então deve estar brava comigo ou não me ama."</p>
+                    </div>
+                    
+                    <div class="card" style="border-color: #e53935;">
+                        <h4>❌ Filtro Negativo</h4>
+                        <p>"Vejo tudo que ele faz de errado e ignoro tudo que faz certo."</p>
+                    </div>
+                    
+                    <div class="card" style="border-color: #e53935;">
+                        <h4>❌ Leitura da Mente</h4>
+                        <p>"Sei que ele está tentando me prejudicar" (sem evidência real).</p>
+                    </div>
+                </div>
+                
+                <h3>Exercício: Corrigir Seus Pensamentos Distorcidos</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>1. Descreva uma situação que o deixa furioso:</strong></label>
+                        <textarea placeholder="Exemplo: Meu cônjuge voltar tarde do trabalho sem avisar"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>2. Que pensamentos negativos você tem sobre essa situação?</strong></label>
+                        <textarea placeholder="'Ele não se importa comigo', 'Ele está me enganando', 'Nunca posso confiar nele'"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>3. Qual é o tipo de distorção do pensamento? (tudo ou nada, conclusões precipitadas, filtro negativo, leitura da mente)</strong></label>
+                        <textarea placeholder="Identifique a distorção..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>4. Quais são as evidências de que seu pensamento negativo reflete a realidade?</strong></label>
+                        <textarea placeholder="Que provas reais você tem?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>5. Quais são as evidências de que seu pensamento negativo NÃO reflete a realidade?</strong></label>
+                        <textarea placeholder="O que contradiz seu pensamento negativo?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>6. Como poderia pensar sobre essa situação de forma mais equilibrada e realista?</strong></label>
+                        <textarea placeholder="Pensamento corrigido/alternativo..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>7. Que frase/mantra você poderia usar para acalmar seus pensamentos nessa situação?</strong></label>
+                        <textarea placeholder="Ex: 'Não ganho nada ficando furioso', 'Posso lidar com isso calmamente'"></textarea>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <h4>💡 Estratégia de Visualização</h4>
+                    <p>Depois de preparar suas frases calmantes, visualize a situação problema enquanto repete mentalmente suas frases. Pratique isso várias vezes por dia até que se torne automático. A prática mental é uma forma eficaz de preparar-se para reagir adequadamente em situações reais.</p>
+                </div>
+            </section>
+            
+            <!-- Atividade 5: Técnicas de Interrupção -->
+            <section class="section">
+                <h2>Atividade 5: Técnicas Práticas de Interrupção da Ira</h2>
+                
+                <div class="activity-card">
+                    <h3>Agir Antes que Seja Tarde</h3>
+                    <p>À medida que a ira aumenta, a capacidade de raciocinar diminui. É mais fácil controlar a ira nas fases iniciais do que quando já está em estados avançados.</p>
+                </div>
+                
+                <h3>Estratégias de Interrupção</h3>
+                
+                <div class="step-by-step">
+                    <h4>1. Reconhecer os Sinais Iniciais</h4>
+                    <p>Aprenda a reconhecer quando você está começando a ficar irritado (tensão, calor, respiração acelerada, pensamentos negativos acelerados). Esse é o melhor momento para intervir.</p>
+                </div>
+                
+                <div class="step-by-step">
+                    <h4>2. Usar um Sinal de Pausa Combinado</h4>
+                    <p>Com seu cônjuge, combine um sinal para interromper a discussão antes que escale. Pode ser fazer um "T" com as mãos. Ambos devem concordar em honrar esse sinal.</p>
+                </div>
+                
+                <div class="step-by-step">
+                    <h4>3. Sair da Situação</h4>
+                    <p>Quando sentir que a ira está aumentando demais, diga: "Estou perdendo a serenidade. Preciso de tempo para acalmar-me." Saia do ambiente por um tempo.</p>
+                </div>
+                
+                <div class="step-by-step">
+                    <h4>4. Retomar a Conversa Depois</h4>
+                    <p>Combine com seu cônjuge um momento específico para retomar a conversa: "Vamos conversar sobre isso em 30 minutos" ou "Podemos falar amanhã?". Isso garante que será resolvido, mas não agora.</p>
+                </div>
+                
+                <div class="step-by-step">
+                    <h4>5. Fazer Atividades Calmantes</h4>
+                    <p>Durante o tempo de pausa, atividades relaxantes ajudam: oração, meditação, caminhada, leitura, exercício físico, música, ouvir hinos sagrados.</p>
+                </div>
+                
+                <h3>Meu Plano Pessoal de Interrupção</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Três primeiros sinais que percebo quando estou começando a ficar furioso:</strong></label>
+                        <textarea placeholder="1. \n2. \n3."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Sinal de pausa que vou usar com meu cônjuge:</strong></label>
+                        <input type="text" placeholder="Ex: Fazer um 'T' com as mãos">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Lugar/espaço que vou usar para me acalmar:</strong></label>
+                        <input type="text" placeholder="Ex: Caminhar pelos arredores, quarto, cozinha">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Atividades que me acalmam mais efetivamente:</strong></label>
+                        <textarea placeholder="1. \n2. \n3. \nEx: Oração, música, exercício, leitura"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Quando vou retomar conversas difíceis (quantidade de tempo ideal):</strong></label>
+                        <input type="text" placeholder="Ex: 30 minutos, 1 hora, no dia seguinte">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 6: Espiritualidade -->
+            <section class="section">
+                <h2>Atividade 6: Aumentar a Espiritualidade</h2>
+                
+                <div class="activity-card">
+                    <h3>Vencer a Ira Através de Mudança Espiritual</h3>
+                    <p>A verdadeira solução para a ira envolve uma transformação espiritual que muda o coração e produz amor, paciência e mansidão.</p>
+                </div>
+                
+                <div class="quote-box">
+                    "Quando optamos por seguir a Cristo, optamos por mudar. O coração humano pode mudar? Claro! Se ainda não aconteceu com vocês, deve acontecer."
+                    <div class="quote-author">— Presidente Ezra Taft Benson</div>
+                </div>
+                
+                <h3>Práticas Espirituais para Superação da Ira</h3>
+                
+                <div class="two-column">
+                    <div class="card" style="border-color: #7b1fa2;">
+                        <h4>📖 Estudo das Escrituras</h4>
+                        <p>Estude ensinamentos sobre amor, paciência, mansidão e perdão. Deixe que as palavras sagradas transformem seu coração.</p>
+                    </div>
+                    
+                    <div class="card" style="border-color: #7b1fa2;">
+                        <h4>🙏 Oração Diária</h4>
+                        <p>Ore diariamente pedindo ajuda para controlar a ira. Peça ao Senhor que o fortaleça e mude seu coração.</p>
+                    </div>
+                    
+                    <div class="card" style="border-color: #7b1fa2;">
+                        <h4>⛪ Frequência à Igreja</h4>
+                        <p>Participe regularmente das ordenanças. O Espírito Santo fortalece você a vencer as fraquezas.</p>
+                    </div>
+                    
+                    <div class="card" style="border-color: #7b1fa2;">
+                        <h4>🕯️ Jejum e Serviço</h4>
+                        <p>Jejue enquanto ora por mudança de coração. Sirva aos outros para desenvolver compaixão e humildade.</p>
+                    </div>
+                    
+                    <div class="card" style="border-color: #7b1fa2;">
+                        <h4>🎵 Música Sagrada</h4>
+                        <p>Cante hinos que elevam o espírito. A música sagrada afasta pensamentos indignos e restaura a paz.</p>
+                    </div>
+                    
+                    <div class="card" style="border-color: #7b1fa2;">
+                        <h4>🤝 Arrependimento</h4>
+                        <p>Arrependa-se sinceramente de atos prejudiciais. Procure perdão de seu cônjuge e do Senhor.</p>
+                    </div>
+                </div>
+                
+                <h3>Meu Plano de Transformação Espiritual</h3>
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Quais são as escrituras que falam sobre amor, paciência e mansidão que vou estudar?</strong></label>
+                        <textarea placeholder="Ex: 1 Coríntios 13, Doutrina e Convênios 121:41-42"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como vou orar todos os dias para pedir ajuda com a ira?</strong></label>
+                        <textarea placeholder="Descreva sua intenção e o que pedirá ao Senhor..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Quanto tempo vou dedicar ao estudo das escrituras diariamente?</strong></label>
+                        <input type="text" placeholder="Ex: 15 minutos cada manhã">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Quais hinos ou músicas sagradas me acalmam e elevam espiritualmente?</strong></label>
+                        <textarea placeholder="Liste seus hinos ou músicas favoritas..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Vou jejuar em (qual dia da semana?):</strong></label>
+                        <input type="text" placeholder="Ex: Primeiro domingo do mês, ou especificamente para vencer a ira">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como posso servir ao meu cônjuge e à minha família desta semana?</strong></label>
+                        <textarea placeholder="Atos específicos de serviço e compaixão..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Se necessário, vou conversar com meu bispo/presidente de ramo sobre:</strong></label>
+                        <textarea placeholder="Tópicos que você gostaria de discutir..."></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Atividade 7: Plano de Prevenção de Recaídas -->
+            <section class="section">
+                <h2>Atividade 7: Desenvolver um Plano de Prevenção de Recaídas</h2>
+                
+                <div class="activity-card">
+                    <h3>Manter o Progresso a Longo Prazo</h3>
+                    <p>A prevenção de recaídas envolve continuar a usar as estratégias aprendidas e evitar voltar aos velhos padrões de comportamento.</p>
+                </div>
+                
+                <h3>Estratégias para as Fases do Ciclo de Ira</h3>
+                
+                <div class="form-section">
+                    <h4 style="color: #d32f2f; margin-bottom: 20px;">Fase 1: Fingir a Normalidade</h4>
+                    <p style="margin-bottom: 15px; color: #555;">Nesta fase, você reconhece seu problema com a ira, mas está administrando-o de forma saudável.</p>
+                    
+                    <div class="form-group">
+                        <label><strong>Como vou manter a consciência de minhas crises de ira?</strong></label>
+                        <textarea placeholder="Manter diários, refletir regularmente, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Estratégias para evitar situações de alto risco:</strong></label>
+                        <textarea placeholder="Quais situações devo evitar? Como vou evitá-las?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como vou relaxar e fazer pausas regularmente?</strong></label>
+                        <textarea placeholder="Técnicas de relaxamento diárias..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Conflitos que preciso resolver para evitar acúmulo de ira:</strong></label>
+                        <textarea placeholder="Que problemas não resolvidos precisam ser abordados?"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h4 style="color: #d32f2f; margin-bottom: 20px;">Fase 2: Acúmulo da Ira e Uso de Intervenções</h4>
+                    <p style="margin-bottom: 15px; color: #555;">Quando os sinais de acúmulo aparecerem, use estas estratégias imediatamente.</p>
+                    
+                    <div class="form-group">
+                        <label><strong>Alternativas aos pensamentos negativos (frases positivas que vou usar):</strong></label>
+                        <textarea placeholder="Ex: 'Posso lidar com isso', 'Há outras soluções', 'Ele não está me atacando'"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Comportamentos destrutivos que devo evitar:</strong></label>
+                        <textarea placeholder="O que devo PARAR de fazer? (gritar, insultar, destruir, beber, etc.)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Atividades físicas que vou fazer para gastar energia:</strong></label>
+                        <textarea placeholder="Exercício, caminhada, trabalho manual, esportes, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Maneiras saudáveis de expressar sentimentos dolorosos:</strong></label>
+                        <textarea placeholder="Conversa honesta, escrita em diário, oração, discussão com confiante"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Pessoas que posso contatar para buscar apoio (cônjuge, amigo, bispo, conselheiro):</strong></label>
+                        <textarea placeholder="Nome, telefone, quando contatar..."></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- A Paz de Deus -->
+            <section class="section">
+                <h2>A Paz de Deus</h2>
+                
+                <div class="quote-box">
+                    "A paz de Deus, que excede todo o entendimento, guardará os vossos corações e vossos pensamentos em Cristo Jesus."
+                    <div class="quote-author">— Filipenses 4:7</div>
+                </div>
+                
+                <p>Pessoas que superaram a ira relatam uma libertação incrível. A paz restaurada permite que vivam em harmonia com seus cônjuges, desfrutem relacionamentos saudáveis e experimentem alegria genuína.</p>
+                
+                <div class="success-box">
+                    <h4>✨ Testemunho de Vitória</h4>
+                    <p>"Antes eu tinha vontade de fazer mal a todos que passavam pela minha frente. A ira dominava minha vida. Quando apliquei os princípios do evangelho e aprendi a pensar de modo diferente e a ver as pessoas de uma maneira mais positiva, minha raiva dissipou-se. Agora posso sentir-me bem na presença das pessoas. Sinto que retomei as rédeas de minha vida."</p>
+                </div>
+            </section>
+            
+            <!-- Conclusão -->
+            <section class="section">
+                <h2>Conclusão: Seu Compromisso com a Mudança</h2>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label><strong>Qual é o meu principal objetivo em relação à ira?</strong></label>
+                        <textarea placeholder="O que quero alcançar?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Qual estratégia vou começar a usar HOJE?</strong></label>
+                        <textarea placeholder="Uma ação concreta que posso fazer imediatamente..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Como vou prestar contas de meu progresso? (cônjuge, bispo, amigo)</strong></label>
+                        <textarea placeholder="Com quem vou compartilhar meu progresso e com que frequência?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><strong>Meu compromisso comigo mesmo e com Deus:</strong></label>
+                        <textarea placeholder="Escreva um compromisso sincero de mudança..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <h4>💪 Você Pode Fazer Isso!</h4>
+                    <p>A ira é uma fraqueza que pode ser superada. Com esforço consistente, mudança de pensamento, técnicas práticas e força espiritual, você pode vencer a ira e restaurar paz e amor em seu relacionamento. O Senhor está ao seu lado nessa jornada.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <a href="atividade3.html">⬅️ Anterior</a>
+            <a href="index.html">🏠 Início</a>
+            <a href="atividade5.html">➡️ Próxima</a>
+        </footer>
+    </div>
+</body>
+</html>
